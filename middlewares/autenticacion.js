@@ -18,10 +18,9 @@ exports.verificaToken = function(req, res, next) {
                 errors: err
             });
         }
+        req.usuario = decoded.usuario;
+        next();
 
     });
 
-    req.usuario = decoded.usuario;
-
-    next();
 }
